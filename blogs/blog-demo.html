@@ -1186,506 +1186,81 @@
         <div class="nav-container">
             <div class="logo">HARSH.</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
-                <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="blogs.html" style="color:var(--accent)">Blogs</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Hire Me</a></li>
             </ul>
             <div class="mobile-menu" id="mobileMenu"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero-bg"></div>
-        <div class="hero-grid"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="dot"></span>
-                Available for Freelance Projects
+    <!-- HEADER SPACING -->
+    <div style="height: 100px;"></div>
+
+    <!-- BLOG POST -->
+    <section id="blog-post" style="min-height: calc(100vh - 100px); padding-bottom: 4rem;">
+        <div class="section-inner" style="max-width: 800px; margin: 0 auto;">
+            <a href="blogs.html"
+                style="color:var(--text2); text-decoration:none; font-size:0.9rem; margin-bottom:2rem; display:inline-block;"><i
+                    class="fas fa-arrow-left"></i> Back to Blogs</a>
+
+            <div class="project-tags" style="margin-bottom: 1rem;">
+                <span class="ptag">Laravel</span><span class="ptag">Performance</span>
             </div>
-            <h1>Laravel Backend<br><span>Engineer</span></h1>
-            <p class="hero-sub">
-                I'm <strong>Harsh Prajapati</strong> — a backend engineer with <strong>4+ years of experience</strong>
-                building production-grade
-                Laravel applications. I help businesses ship <strong>scalable, high-performance APIs</strong> and web
-                products that actually work.
-            </p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn-primary"><i class="fas fa-folder-open"
-                        style="margin-right:0.5rem"></i>View My Work</a>
-                <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"
-                        style="margin-right:0.5rem"></i>Let's Talk</a>
+
+            <h1
+                style="font-family:'Outfit', sans-serif; font-size:clamp(2rem, 4vw, 3rem); line-height:1.2; margin-bottom:1rem;">
+                Optimizing Laravel APIs for Scale</h1>
+
+            <div
+                style="color:var(--text3); font-size:0.9rem; margin-bottom:3rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border);">
+                Published on May 21, 2026 · 5 min read · By Harsh Prajapati
+            </div>
+
+            <div style="color:var(--text2); font-size:1.05rem; line-height:1.8;">
+                <p style="margin-bottom:1.5rem;">When building applications that serve thousands of users, API response
+                    times are critical. A slow API doesn't just frustrate users—it wastes server resources and increases
+                    your infrastructure costs.</p>
+
+                <h3 style="color:var(--text); font-family:'Outfit'; font-size:1.5rem; margin:2rem 0 1rem;">1. The N+1
+                    Problem</h3>
+                <p style="margin-bottom:1.5rem;">The most common performance killer in Eloquent is the N+1 query
+                    problem. Whenever you loop over a collection of models and access a relationship that hasn't been
+                    loaded, Laravel executes a new query for each item.</p>
+
+                <div
+                    style="background:var(--bg2); padding:1.5rem; border-radius:12px; border:1px solid var(--border); margin-bottom:1.5rem; font-family:monospace; color:#00d4aa; overflow-x:auto;">
+                    // BAD<br>
+                    $users = User::all();<br>
+                    foreach ($users as $user) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;echo $user->profile->bio;<br>
+                    }<br><br>
+                    // GOOD<br>
+                    $users = User::with('profile')->get();
+                </div>
+
+                <h3 style="color:var(--text); font-family:'Outfit'; font-size:1.5rem; margin:2rem 0 1rem;">2. Database
+                    Indexing</h3>
+                <p style="margin-bottom:1.5rem;">No amount of server caching can fix a slow full-table scan in your
+                    database. Ensure that every foreign key and frequently searched column has a proper index applied in
+                    your migrations.</p>
+
+                <h3 style="color:var(--text); font-family:'Outfit'; font-size:1.5rem; margin:2rem 0 1rem;">3. Redis
+                    Caching</h3>
+                <p style="margin-bottom:1.5rem;">For data that doesn't change on every request (like global settings,
+                    statistics, or heavily joined public data), caching the query result in Redis can cut response times
+                    from 400ms down to 15ms.</p>
+
+                <p style="margin-bottom:1.5rem;">By combining these three simple optimizations, I regularly slash API
+                    response times by 40% or more, allowing the same AWS t3.small instances to handle double the traffic
+                    effortlessly.</p>
             </div>
         </div>
     </section>
-
-    <!-- STATS -->
-    <div class="stats-bar">
-        <div class="stats-inner">
-            <div class="stat-item">
-                <span class="stat-num">4+</span>
-                <div class="stat-label">Years of Experience</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">10+</span>
-                <div class="stat-label">Projects Shipped</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">40%</span>
-                <div class="stat-label">API Performance Boost</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">2</span>
-                <div class="stat-label">Companies Served</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">1</span>
-                <div class="stat-label">Laravel Bug Reported</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="section-inner">
-            <div class="section-label">About Me</div>
-            <h2 class="section-title">The engineer behind<br>the architecture</h2>
-            <div class="about-grid fade-in">
-                <div class="about-image-wrap">
-                    <div class="about-image-inner">
-                        <img src="portfolio/harsh_pro.png" alt="Harsh Prajapati — Laravel Backend Engineer">
-                    </div>
-                    <div class="about-badge">
-                        <strong>4+</strong>
-                        <span>Years Building<br>Production Apps</span>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>
-                        I'm a passionate Laravel Backend Engineer based in <strong style="color:var(--text)">Ahmedabad,
-                            India</strong>, open to remote opportunities worldwide.
-                        I specialize in <strong style="color:var(--text)">designing robust, scalable
-                            architectures</strong> — from modular repository-service patterns to Dockerized cloud
-                        deployments.
-                    </p>
-                    <p>
-                        My expertise spans transforming legacy MVC codebases into clean, auditable structures, boosting
-                        API performance significantly through database optimization,
-                        and building complex integrations with <strong style="color:var(--text)">Stripe, Razorpay,
-                            WebSockets, Push Notifications, and AWS</strong>.
-                    </p>
-                    <p>
-                        I've led micro-SaaS development end-to-end, contributed to fintech platforms, and even
-                        discovered and reported a core Laravel framework bug to the official repository.
-                        I care deeply about <strong style="color:var(--text)">clean code, testability, and delivering
-                            real results</strong>.
-                    </p>
-                    <div style="margin-top: 2rem;">
-                        <a href="#services" class="btn-primary"
-                            style="display:inline-flex; align-items:center; gap:0.5rem;">Explore My Services <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services">
-        <div class="section-inner">
-            <div class="section-label">What I Offer</div>
-            <h2 class="section-title">Services built to<br>grow your product</h2>
-            <p class="section-desc">From backend APIs to full product architecture — here's exactly what I can do for
-                you.</p>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fab fa-laravel"></i></div>
-                    <h3>Laravel Application Development</h3>
-                    <p>Full-cycle development of Laravel web applications — from database design and Eloquent models to
-                        advanced features like queues, events, broadcasting, and scheduled jobs.</p>
-                    <div class="service-tags">
-                        <span class="stag">Laravel</span><span class="stag">PHP</span><span class="stag">Eloquent
-                            ORM</span><span class="stag">Queues</span>
-                    </div>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fas fa-server"></i></div>
-                    <h3>REST API Design & Development</h3>
-                    <p>Design and build clean, well-documented, high-performance RESTful APIs. I focus on response
-                        consistency, authentication (Sanctum/Passport), versioning, and scalability.</p>
-                    <div class="service-tags">
-                        <span class="stag">REST APIs</span><span class="stag">Sanctum</span><span
-                            class="stag">Postman</span><span class="stag">JWT</span>
-                    </div>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fas fa-database"></i></div>
-                    <h3>Database Design & Optimization</h3>
-                    <p>Schema normalization, indexing strategies, query optimization, and Eloquent tuning. I've improved
-                        API performance by 40% through targeted database work.</p>
-                    <div class="service-tags">
-                        <span class="stag">MySQL</span><span class="stag">Indexing</span><span class="stag">Schema
-                            Design</span><span class="stag">Performance</span>
-                    </div>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fab fa-docker"></i></div>
-                    <h3>Docker & AWS Deployment</h3>
-                    <p>Dockerize your application, set up CI/CD pipelines, and deploy to AWS. I handle infrastructure so
-                        your app runs reliably and scales with your growth.</p>
-                    <div class="service-tags">
-                        <span class="stag">Docker</span><span class="stag">AWS EC2/S3</span><span
-                            class="stag">CI/CD</span><span class="stag">DevOps</span>
-                    </div>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fas fa-credit-card"></i></div>
-                    <h3>Payment & Third-Party Integrations</h3>
-                    <p>Integrate Stripe subscriptions, Razorpay payments, push notifications, WebSockets, and any
-                        third-party API into your existing or new Laravel application.</p>
-                    <div class="service-tags">
-                        <span class="stag">Stripe</span><span class="stag">Razorpay</span><span
-                            class="stag">WebSockets</span><span class="stag">FCM</span>
-                    </div>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fas fa-code-branch"></i></div>
-                    <h3>Legacy Code Refactoring</h3>
-                    <p>Restructure aging MVC codebases into clean, modular repository-service architectures. Reduce
-                        technical debt, pass compliance audits, and set up for future scale.</p>
-                    <div class="service-tags">
-                        <span class="stag">Refactoring</span><span class="stag">Architecture</span><span
-                            class="stag">Service Pattern</span><span class="stag">Pest</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-        <div class="section-inner">
-            <div class="section-label">Tech Stack</div>
-            <h2 class="section-title">Tools I work with<br>every single day</h2>
-            <div class="skills-wrapper fade-in">
-                <div class="skills-cat-title">Backend</div>
-                <div class="skills-row">
-                    <div class="skill-pill"><i class="fab fa-laravel"></i> Laravel</div>
-                    <div class="skill-pill"><i class="fab fa-php"></i> PHP</div>
-                    <div class="skill-pill"><i class="fas fa-database"></i> MySQL</div>
-                    <div class="skill-pill"><i class="fas fa-server"></i> REST APIs</div>
-                    <div class="skill-pill"><i class="fas fa-tasks"></i> Queue Jobs</div>
-                    <div class="skill-pill"><i class="fas fa-clock"></i> Cron Jobs</div>
-                    <div class="skill-pill"><i class="fas fa-flask"></i> Pest / PHPUnit</div>
-                </div>
-                <div class="skills-cat-title">Frontend</div>
-                <div class="skills-row">
-                    <div class="skill-pill"><i class="fab fa-js"></i> JavaScript</div>
-                    <div class="skill-pill"><i class="fab fa-react"></i> React.js</div>
-                    <div class="skill-pill"><i class="fas fa-wind"></i> Tailwind CSS</div>
-                    <div class="skill-pill"><i class="fas fa-mountain"></i> Alpine.js</div>
-                    <div class="skill-pill"><i class="fas fa-code"></i> jQuery</div>
-                </div>
-                <div class="skills-cat-title">DevOps & Integrations</div>
-                <div class="skills-row">
-                    <div class="skill-pill"><i class="fab fa-docker"></i> Docker</div>
-                    <div class="skill-pill"><i class="fab fa-aws"></i> AWS</div>
-                    <div class="skill-pill"><i class="fab fa-git-alt"></i> Git</div>
-                    <div class="skill-pill"><i class="fab fa-stripe"></i> Stripe</div>
-                    <div class="skill-pill"><i class="fas fa-credit-card"></i> Razorpay</div>
-                    <div class="skill-pill"><i class="fas fa-plug"></i> WebSockets</div>
-                    <div class="skill-pill"><i class="fas fa-bell"></i> Push Notifications</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-        <div class="section-inner">
-            <div class="section-label">Featured Work</div>
-            <h2 class="section-title">Projects I've built<br>and shipped</h2>
-            <div class="projects-grid">
-                <div class="project-card project-highlight fade-in">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-camera"></i></div>
-                        <div class="project-meta">
-                            <h3>Face Finder</h3>
-                            <div class="project-type">MICRO-SAAS · FULL PRODUCT LEAD</div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>A smart SaaS for managing and sharing event photos using face recognition. I single-handedly
-                            developed and led this full micro-SaaS product — from Laravel backend and Python FastAPI
-                            face recognition services to Razorpay billing and AWS infrastructure on Docker.</p>
-                        <div class="project-tags">
-                            <span class="ptag">Laravel</span><span class="ptag">Python FastAPI</span><span
-                                class="ptag">MySQL</span>
-                            <span class="ptag">Face Recognition</span><span class="ptag">Razorpay</span><span
-                                class="ptag">Docker</span><span class="ptag">AWS</span>
-                            <span class="ptag">Alpine.js</span><span class="ptag">Tailwind</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-gavel"></i></div>
-                        <div class="project-meta">
-                            <h3>Case Control</h3>
-                            <div class="project-type">FINTECH SAAS · ARCHITECTURE REFACTOR</div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>A fintech SaaS for collection agencies. Restructured a legacy MVC codebase into a modular
-                            repository-service architecture enabling the client to pass a critical licensing audit. Also
-                            discovered and reported a core Laravel framework scheduling bug to the official repository.
-                        </p>
-                        <div class="project-tags">
-                            <span class="ptag">Laravel</span><span class="ptag">MySQL</span><span
-                                class="ptag">Repository-Service</span><span class="ptag">Docker</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-building"></i></div>
-                        <div class="project-meta">
-                            <h3>Link Service Pro</h3>
-                            <div class="project-type">REAL ESTATE · API PERFORMANCE</div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>A real-estate web app managing property operations end-to-end. Improved API performance by
-                            40% via DB optimization, schema normalization, and Eloquent tuning. Implemented recurring
-                            billing using Stripe's subscription API.</p>
-                        <div class="project-tags">
-                            <span class="ptag">Laravel</span><span class="ptag">MySQL</span><span
-                                class="ptag">Stripe</span><span class="ptag">API Optimization</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-book"></i></div>
-                        <div class="project-meta">
-                            <h3>Source io</h3>
-                            <div class="project-type">PLATFORM · FULL-STACK CONTRIBUTION</div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>A reference management platform for creators like authors and directors. Contributed to both
-                            backend Laravel APIs and React.js frontend features with focus on clean code, data
-                            integrity, and an excellent user experience.</p>
-                        <div class="project-tags">
-                            <span class="ptag">Laravel</span><span class="ptag">React.js</span><span
-                                class="ptag">MySQL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <div class="section-inner">
-            <div class="section-label">Experience</div>
-            <h2 class="section-title">Professional journey</h2>
-            <div class="timeline">
-                <div class="tl-item fade-in">
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <div class="tl-date">Mar 2025 — Present</div>
-                        <div class="tl-title">Software Engineer</div>
-                        <div class="tl-company">Fab Ninjas · Ahmedabad, India</div>
-                        <div class="tl-desc">
-                            <ul>
-                                <li>Developing and maintaining scalable Laravel web applications with advanced payment
-                                    systems and third-party integrations. Actively using Docker, AWS, and modern Laravel
-                                    best practices.</li>
-                                <li>Restructured legacy MVC codebases into vertical-sliced repository-service
-                                    architecture, enabling clients to pass critical licensing audits.</li>
-                                <li>Improved API performance by <strong style="color:var(--accent)">40%</strong> through
-                                    database indexing, schema normalization, and optimized Eloquent queries.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="tl-item fade-in">
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <div class="tl-date">Jul 2022 — Mar 2025</div>
-                        <div class="tl-title">Software Engineer</div>
-                        <div class="tl-company">Tatvasoft · Ahmedabad, India</div>
-                        <div class="tl-desc">
-                            <ul>
-                                <li>Developed and managed advanced Laravel-based real estate automation and e-commerce
-                                    systems. Led client interactions, feature delivery, and long-term maintenance.</li>
-                                <li>Implemented recurring payment handling with Stripe's subscription API.</li>
-                                <li>Enhanced API efficiency by optimizing joins and queries across multiple product
-                                    lines.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="tl-item fade-in">
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <div class="tl-date">Jan 2022 — Jun 2022</div>
-                        <div class="tl-title">Trainee Software Engineer</div>
-                        <div class="tl-company">Tatvasoft · Ahmedabad, India</div>
-                        <div class="tl-desc">Explored the web development world and learned the essentials of modern
-                            backend development with Laravel and PHP.</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Education inline -->
-            <div style="margin-top:4rem">
-                <div class="section-label">Education</div>
-                <h3 class="section-title" style="font-size:1.8rem">Academic Background</h3>
-            </div>
-            <div class="timeline" style="margin-top:2rem">
-                <div class="tl-item fade-in">
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <div class="tl-date">Jul 2018 — Apr 2022 · GPA: 7.87</div>
-                        <div class="tl-title">B.E. in Computer Engineering</div>
-                        <div class="tl-company">Government Engineering College, Gujarat, India</div>
-                        <div class="tl-desc">Comprehensive CS fundamentals — data structures, algorithms, DBMS, and
-                            software engineering principles.</div>
-                    </div>
-                </div>
-                <div class="tl-item fade-in">
-                    <div class="tl-dot"></div>
-                    <div class="tl-content">
-                        <div class="tl-date">Jun 2017 — May 2018</div>
-                        <div class="tl-title">Higher Secondary Certificate (HSC)</div>
-                        <div class="tl-company">R.H Jani Hingwala Highschool, Gujarat, India</div>
-                        <div class="tl-desc">Science stream with strong foundation in mathematics and physics.</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BLOGS -->
-    <section id="blogs">
-        <div class="section-inner">
-            <div class="section-label">Thoughts & Articles</div>
-            <h2 class="section-title">Latest insights from my<br>developer journey</h2>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-header">
-                        <div class="project-icon"><i class="fas fa-book-open"></i></div>
-                        <div class="project-meta">
-                            <h3>Optimizing Laravel APIs for Scale</h3>
-                            <div class="project-type">May 21, 2026 · 5 min read</div>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p>Discover how I reduced API response times by 40% using advanced database indexing, Eloquent
-                            optimizations, and Redis caching strategies.</p>
-                        <div class="project-tags">
-                            <span class="ptag">Laravel</span><span class="ptag">Performance</span>
-                        </div>
-                        <a href="blog-demo.html"
-                            style="display:inline-block; margin-top:1.5rem; color:var(--accent); font-weight:600; text-decoration:none;">Read
-                            Article <i class="fas fa-arrow-right" style="margin-left:0.3rem"></i></a>
-                    </div>
-                </div>
-                <div class="project-card fade-in"
-                    style="display:flex; align-items:center; justify-content:center; background:var(--glass);">
-                    <div style="text-align:center;">
-                        <h3 style="margin-bottom:1rem; font-size:1.2rem;">Want to read more?</h3>
-                        <a href="blogs.html" class="btn-primary" style="display:inline-block;">View All Blogs</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="section-inner">
-            <div class="section-label">Get in Touch</div>
-            <h2 class="section-title">Let's build something<br>great together</h2>
-            <div class="contact-grid">
-                <div class="contact-left fade-in">
-                    <h3>Ready to hire a seasoned Laravel engineer?</h3>
-                    <p>Whether you need a new product built from scratch, a legacy codebase refactored, or a performance
-                        bottleneck fixed — I'm here to help. Let's talk about your project.</p>
-                    <div class="contact-methods">
-                        <a href="mailto:harshprajapati2221@gmail.com" class="contact-method">
-                            <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-method-info">
-                                <div class="contact-method-label">Email</div>
-                                <div class="contact-method-value">harshprajapati2221@gmail.com</div>
-                            </div>
-                        </a>
-                        <a href="tel:+916353523920" class="contact-method">
-                            <div class="contact-method-icon"><i class="fas fa-phone"></i></div>
-                            <div class="contact-method-info">
-                                <div class="contact-method-label">Phone / WhatsApp</div>
-                                <div class="contact-method-value">+91 63535 23920</div>
-                            </div>
-                        </a>
-                        <div class="contact-method">
-                            <div class="contact-method-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="contact-method-info">
-                                <div class="contact-method-label">Location</div>
-                                <div class="contact-method-value">Ahmedabad, India · Open to Remote</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="socials">
-                        <a href="https://github.com/Harsh2221" target="_blank" rel="noopener noreferrer"
-                            class="social-btn"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/harsh-prajapati-9a39161b1/" target="_blank"
-                            rel="noopener noreferrer" class="social-btn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:harshprajapati2221@gmail.com" class="social-btn"><i
-                                class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="contact-right fade-in">
-                    <h3>Send me a message</h3>
-                    <form onsubmit="handleForm(event)">
-                        <div class="form-row">
-                            <label>Your Name</label>
-                            <input type="text" id="cf-name" placeholder="John Smith" required>
-                        </div>
-                        <div class="form-row">
-                            <label>Email Address</label>
-                            <input type="email" id="cf-email" placeholder="john@company.com" required>
-                        </div>
-                        <div class="form-row">
-                            <label>What do you need?</label>
-                            <select id="cf-service">
-                                <option value="">Select a service...</option>
-                                <option>Laravel Application Development</option>
-                                <option>REST API Development</option>
-                                <option>Database Optimization</option>
-                                <option>Docker & AWS Deployment</option>
-                                <option>Payment Integration</option>
-                                <option>Legacy Code Refactoring</option>
-                                <option>Other / Let's Discuss</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label>Message</label>
-                            <textarea id="cf-message" placeholder="Tell me about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="form-btn" id="cf-btn">Send Message <i class="fas fa-paper-plane"
-                                style="margin-left:0.4rem"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
