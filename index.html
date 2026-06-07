@@ -12,7 +12,7 @@
     <meta name="author" content="Harsh Prajapati, Harsh2221">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://harsh2221.github.io/portfolio/">
-    <meta property="og:title" content="Harsh2221 — Laravel Backend Engineer">
+    <meta property="og:title" content="Harsh2221` — Laravel Backend Engineer">
     <meta property="og:description"
         content="Laravel Backend Engineer with 4+ years of experience. Expert in PHP, MySQL, Docker, AWS. Open to remote freelance work.">
     <meta property="og:type" content="website">
@@ -131,43 +131,33 @@
         /* NAV */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.2rem 5%;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            padding: 0.5rem 0.8rem;
             background: rgba(11, 15, 26, 0.85);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            border: 1px solid var(--border);
+            border-radius: 100px;
             z-index: 1000;
-            transition: padding 0.3s;
+            transition: padding 0.3s, top 0.3s;
         }
 
         nav.scrolled {
-            padding: 0.8rem 5%;
+            padding: 0.35rem 0.8rem;
+            top: 1rem;
         }
 
         .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-        }
-
-        .logo {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--accent), var(--accent2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            cursor: pointer;
-            letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.4rem;
             list-style: none;
             align-items: center;
         }
@@ -203,7 +193,7 @@
         }
 
         .nav-cta {
-            padding: 0.75rem 2rem;
+            padding: 0.4rem 1rem;
             background: linear-gradient(135deg, var(--accent), var(--accent2));
             color: #ffffff !important;
             border-radius: 100px;
@@ -1186,7 +1176,7 @@
                 display: flex;
                 flex-direction: column;
                 position: fixed;
-                top: 70px;
+                top: 60px;
                 left: 0;
                 right: 0;
                 background: rgba(11, 15, 26, 0.97);
@@ -1265,7 +1255,6 @@
     <!-- NAV -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">HARSH.</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
@@ -1286,7 +1275,7 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="dot"></span>
-                Available for Freelance Projects
+                Available for Freelance Projects / Open to Remote opportunities
             </div>
             <h1>Laravel Backend<br><span>Engineer</span></h1>
             <p class="hero-sub">
@@ -1316,14 +1305,6 @@
             <div class="stat-item">
                 <span class="stat-num">50% +</span>
                 <div class="stat-label">API Performance Boost</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">2</span>
-                <div class="stat-label">Companies Served</div>
-            </div>
-            <div class="stat-item">
-                <span class="stat-num">1</span>
-                <div class="stat-label">Laravel Bug Reported</div>
             </div>
         </div>
     </div>
